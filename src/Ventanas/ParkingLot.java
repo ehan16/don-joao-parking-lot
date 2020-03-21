@@ -10,7 +10,7 @@ import Clases.Vehicle;
 
 /**
  *
- * @author EH
+ * @author Han, Serrano
  */
 public class ParkingLot extends javax.swing.JFrame {
 

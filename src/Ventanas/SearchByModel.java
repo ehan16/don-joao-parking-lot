@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author EH
+ * @author Han, Serrano
  */
 public class SearchByModel extends javax.swing.JFrame {
 

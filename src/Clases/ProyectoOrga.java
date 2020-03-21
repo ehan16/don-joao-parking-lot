@@ -9,7 +9,7 @@ import Ventanas.Main;
 
 /**
  *
- * @author EH
+ * @author Han, Serrano
  */
 public class ProyectoOrga {
 

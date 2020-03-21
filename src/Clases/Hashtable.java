@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author EH
+ * @author Han, Serrano
  */
 public class Hashtable {
 
@@ -136,7 +136,8 @@ public class Hashtable {
                 
                 if(this.vehicles[i][j] != null) {
                     
-                    String[] aux = this.vehicles[i][j].getModel().split("\\s+");    //Se separan las palabras del modelo por si llegan a tener dos o mas
+                    String[] aux = this.vehicles[i][j].getModel().split("\\s+");    
+                    //Se separan las palabras del modelo por si llegan a tener dos o mas
                     
                     for (int k = 0; k < aux.length; k++) {
                         

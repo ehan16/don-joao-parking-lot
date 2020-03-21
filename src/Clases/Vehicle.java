@@ -7,7 +7,7 @@ package Clases;
 
 /**
  *
- * @author EH
+ * @author Han, Serrano
  */
 public class Vehicle {
     
