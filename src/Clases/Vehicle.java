@@ -69,4 +69,11 @@ public class Vehicle {
         this.monthlyRent = monthlyRent;
     }
     
+    @Override
+    public String toString(){
+        
+        return this.licensePlate;
+        
+    }
+    
 }
