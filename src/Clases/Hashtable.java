@@ -5,9 +5,11 @@
  */
 package Clases;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author EH
+ * @author Han, Serrano
  */
 public class Hashtable {
 
@@ -120,6 +122,42 @@ public class Hashtable {
     
     public Vehicle[][] getVehicles() {
         return this.vehicles;
+    }
+    
+    //Metodo que retorna una lista con los vehiculos que cumplan con el modelo
+    public ArrayList<Vehicle> getVehiclesByModel(String model) {
+        
+        model = model.toUpperCase();
+        ArrayList<Vehicle> vehiclesByModel = new ArrayList();
+        
+        for (int i = 0; i < this.vehicles.length; i++) {
+            
+            for (int j = 0; j < this.vehicles[0].length; j++) {
+                
+                if(this.vehicles[i][j] != null) {
+                    
+                    String[] aux = this.vehicles[i][j].getModel().split("\\s+");    
+                    //Se separan las palabras del modelo por si llegan a tener dos o mas
+                    
+                    for (int k = 0; k < aux.length; k++) {
+                        
+                        if(aux[k].equalsIgnoreCase(model)) {
+                            
+                            vehiclesByModel.add(this.vehicles[i][j]);
+                            break;
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        return vehiclesByModel;
+        
     }
 
 }

@@ -7,7 +7,7 @@ package Clases;
 
 /**
  *
- * @author EH
+ * @author Han, Serrano
  */
 public class Vehicle {
     
@@ -67,6 +67,13 @@ public class Vehicle {
 
     public void setMonthlyRent(int monthlyRent) {
         this.monthlyRent = monthlyRent;
+    }
+    
+    @Override
+    public String toString(){
+        
+        return this.licensePlate;
+        
     }
     
 }

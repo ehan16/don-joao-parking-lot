@@ -7,7 +7,7 @@ package Ventanas;
 
 /**
  *
- * @author EH
+ * @author Han, Serrano
  */
 public class Main extends javax.swing.JFrame {
 
