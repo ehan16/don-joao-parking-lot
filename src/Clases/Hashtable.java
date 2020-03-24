@@ -15,6 +15,7 @@ public class Hashtable {
 
     private Vehicle[][] vehicles = new Vehicle[22][3];
     private boolean[] full = new boolean[22]; 
+    private int overflowIndex = 11;
     
     public Hashtable() {
         for (int i = 0; i < full.length; i++) {
@@ -64,20 +65,25 @@ public class Hashtable {
             
         } else {    //Si el grupo esta lleno, se dirige a llenar en overflow
             
-            int overflowIndex = 11; //Indice para recorrer el overflow
+            //int overflowIndex = 11; //Indice para recorrer el overflow
             boolean inserted = false;  //Para saber si se ha insertado el carro
            
             while(!inserted){   //Mientras no se haya podido insertar el carro
                
-                if(!this.full[overflowIndex]) { //Si ese grupo no esta lleno, se procede a insertar
+                if(!this.full[this.overflowIndex]) { //Si ese grupo no esta lleno, se procede a insertar
                    
+                    System.out.println("Entre 1");
                     for (int j = 0; j < this.vehicles[0].length; j++) {
                          
-                        if(this.vehicles[overflowIndex][j] == null) {
-                            this.vehicles[overflowIndex][j] = vehicle;  //Si la casilla se encuentra vacia, se inserta el carro
+                        System.out.println("Entre 2");
+                        if(this.vehicles[this.overflowIndex][j] == null) {
+                            this.vehicles[this.overflowIndex][j] = vehicle;  //Si la casilla se encuentra vacia, se inserta el carro
                             inserted = true;    //Se cambia el booleano a verdadero 
                             System.out.println("Se inserto en " + overflowIndex);
                             System.out.println("El carro de placa " + vehicle.getLicensePlate());
+                            if(j == 2){
+                                this.full[this.overflowIndex] = true;
+                            }
                             break;
                         }
                 
@@ -85,7 +91,8 @@ public class Hashtable {
                    
                 } else {
                     
-                    overflowIndex++;    //Si el grupo esta lleno, se avanza al siguiente
+                    System.out.println("Entre 3");
+                    this.overflowIndex++;    //Si el grupo esta lleno, se avanza al siguiente
                     
                 }
                
@@ -99,21 +106,41 @@ public class Hashtable {
         
         int hash = Hashtable.hashFunction(licensePlate);
         System.out.println("Se busca en " + hash);
+        boolean searchOverflow = false;
         
         for (int j = 0; j < this.vehicles[0].length; j++) {     //Para recorrer el grupo
             
             System.out.println("En el ciclo");
             if(this.vehicles[hash][j] != null) { //Verifica si existe vehiculo para evaluar
             
-                System.out.println("ENtre" + j);
+                System.out.println("Entre" + j);
                 if(this.vehicles[hash][j].getLicensePlate().equalsIgnoreCase(licensePlate)){    //Se evalua
                     
                     return this.vehicles[hash][j];  //Si las placas son iguales, se retorna el vehiculo
                     
-                }
+                } 
                 
+            } 
+            
+            if(j == 2 && this.vehicles[hash][j] != null) {
+                searchOverflow = true;
             }
             
+        }
+        
+        if(searchOverflow) {
+            for (int i = 11; i < this.vehicles.length; i++) {
+                for (int j = 0; j < this.vehicles[0].length; j++) {
+                    
+                    if(this.vehicles[i][j] == null){
+                        return null;
+                    }
+                    
+                    if(this.vehicles[i][j].getLicensePlate().equalsIgnoreCase(licensePlate)) {
+                        return this.vehicles[i][j];
+                    }
+                }
+            }
         }
         
         return null;    //Si no se encuentra el vehiculo, se retornara nulo

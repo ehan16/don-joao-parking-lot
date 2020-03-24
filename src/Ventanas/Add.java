@@ -72,12 +72,14 @@ public class Add extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Placa:");
 
+        txtLicensePlate.setForeground(new java.awt.Color(0, 0, 0));
         txtLicensePlate.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtLicensePlateKeyTyped(evt);
             }
         });
 
+        txtBranch.setForeground(new java.awt.Color(0, 0, 0));
         txtBranch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtBranchKeyTyped(evt);
@@ -88,6 +90,7 @@ public class Add extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Marca:");
 
+        txtModel.setForeground(new java.awt.Color(0, 0, 0));
         txtModel.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtModelKeyTyped(evt);
@@ -98,6 +101,7 @@ public class Add extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Modelo:");
 
+        txtColor.setForeground(new java.awt.Color(0, 0, 0));
         txtColor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtColorKeyTyped(evt);
@@ -108,6 +112,7 @@ public class Add extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Color:");
 
+        txtRent.setForeground(new java.awt.Color(0, 0, 0));
         txtRent.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtRentKeyTyped(evt);

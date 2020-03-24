@@ -74,6 +74,7 @@ public class SearchByModel extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(228, 228, 228));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 51, 0), 2, true));
 
+        txtSearchModel.setForeground(new java.awt.Color(0, 0, 0));
         txtSearchModel.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtSearchModelKeyTyped(evt);
@@ -105,6 +106,7 @@ public class SearchByModel extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 235));
         jPanel2.setForeground(new java.awt.Color(255, 255, 235));
 
+        jListVehicles.setForeground(new java.awt.Color(0, 0, 0));
         jListVehicles.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -117,12 +119,16 @@ public class SearchByModel extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jListVehicles);
 
+        txtPlate.setForeground(new java.awt.Color(0, 0, 0));
         txtPlate.setEnabled(false);
 
+        txtBranch.setForeground(new java.awt.Color(0, 0, 0));
         txtBranch.setEnabled(false);
 
+        txtModel.setForeground(new java.awt.Color(0, 0, 0));
         txtModel.setEnabled(false);
 
+        txtColor.setForeground(new java.awt.Color(0, 0, 0));
         txtColor.setEnabled(false);
         txtColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +136,7 @@ public class SearchByModel extends javax.swing.JFrame {
             }
         });
 
+        txtRent.setForeground(new java.awt.Color(0, 0, 0));
         txtRent.setEnabled(false);
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -287,6 +294,10 @@ public class SearchByModel extends javax.swing.JFrame {
             
             for (int i = 0; i < vehicles.size(); i++) {
                 this.modelVehicles.addElement(vehicles.get(i));
+            }
+            
+            if(this.vehicles.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "ERROR: No existe ese modelo", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
             
         }

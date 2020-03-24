@@ -58,16 +58,19 @@ public class ParkingLot extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 51, 0), 2, true));
 
         txtThirdColumn.setColumns(20);
+        txtThirdColumn.setForeground(new java.awt.Color(0, 0, 0));
         txtThirdColumn.setRows(5);
         txtThirdColumn.setEnabled(false);
         jScrollPane1.setViewportView(txtThirdColumn);
 
         txtFirstColumn.setColumns(20);
+        txtFirstColumn.setForeground(new java.awt.Color(0, 0, 0));
         txtFirstColumn.setRows(5);
         txtFirstColumn.setEnabled(false);
         jScrollPane2.setViewportView(txtFirstColumn);
 
         txtSecondColumn.setColumns(20);
+        txtSecondColumn.setForeground(new java.awt.Color(0, 0, 0));
         txtSecondColumn.setRows(5);
         txtSecondColumn.setEnabled(false);
         jScrollPane3.setViewportView(txtSecondColumn);
@@ -166,13 +169,13 @@ public class ParkingLot extends javax.swing.JFrame {
                     
                     switch (j) {
                         case 0:
-                            firstColumn = firstColumn + this.printVehicle(vehicles[i][j], num);
+                            firstColumn = firstColumn + this.printVehicle(vehicles[i][j], num, i + 1);
                             break;
                         case 1:
-                            secondColumn = secondColumn + this.printVehicle(vehicles[i][j], num);
+                            secondColumn = secondColumn + this.printVehicle(vehicles[i][j], num, i + 1);
                             break;
                         case 2:
-                            thirdColumn = thirdColumn + this.printVehicle(vehicles[i][j], num);
+                            thirdColumn = thirdColumn + this.printVehicle(vehicles[i][j], num, i + 1);
                             break;
                     }
                     
@@ -190,10 +193,11 @@ public class ParkingLot extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSearch1ActionPerformed
 
-    String printVehicle(Vehicle vehicle, int num) {
+    String printVehicle(Vehicle vehicle, int num, int row) {
         
         //Metodo para imprimir la informacion del vehiculo
-        String info = "Vehículo " + num + 
+        String info = "Fila " + row + 
+                    "\nVehículo " + num +  
                     "\nPlaca: " + vehicle.getLicensePlate() + 
                     "\nMarca: " + vehicle.getBrand() + 
                     "\nModelo: " + vehicle.getModel() +

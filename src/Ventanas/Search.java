@@ -89,6 +89,7 @@ public class Search extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Placa:");
 
+        txtLicensePlate.setForeground(new java.awt.Color(0, 0, 0));
         txtLicensePlate.setEnabled(false);
         txtLicensePlate.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -96,6 +97,7 @@ public class Search extends javax.swing.JFrame {
             }
         });
 
+        txtModel.setForeground(new java.awt.Color(0, 0, 0));
         txtModel.setEnabled(false);
         txtModel.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -107,6 +109,7 @@ public class Search extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Marca:");
 
+        txtBranch.setForeground(new java.awt.Color(0, 0, 0));
         txtBranch.setEnabled(false);
         txtBranch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -118,6 +121,7 @@ public class Search extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Modelo:");
 
+        txtColor.setForeground(new java.awt.Color(0, 0, 0));
         txtColor.setEnabled(false);
         txtColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +138,7 @@ public class Search extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Color:");
 
+        txtRent.setForeground(new java.awt.Color(0, 0, 0));
         txtRent.setEnabled(false);
         txtRent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,6 +279,7 @@ public class Search extends javax.swing.JFrame {
 
                 //Se verifica si existe el carro o no
                 JOptionPane.showMessageDialog(null, "ERROR: No existe", "ERROR", JOptionPane.ERROR_MESSAGE);
+                this.clearForm();
 
             } else {
 
@@ -322,7 +328,7 @@ public class Search extends javax.swing.JFrame {
 
     private void txtPlateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPlateKeyTyped
         // TODO add your handling code here:
-        if(txtLicensePlate.getText().length() > 6) evt.consume(); //Se le coloca un limite a la cantidad de caracteres que puede introducir en la placa
+        if(txtPlate.getText().length() > 6) evt.consume(); //Se le coloca un limite a la cantidad de caracteres que puede introducir en la placa
     }//GEN-LAST:event_txtPlateKeyTyped
 
     private void txtColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorActionPerformed
